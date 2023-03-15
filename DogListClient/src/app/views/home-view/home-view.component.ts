@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeViewComponent implements OnInit {
 
+  selectedBreed: Array<string> = []
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  updateSelectedBreed(urlArray: any){
+    console.log(urlArray)
+    this.selectedBreed = urlArray;
   }
 
 }

@@ -1,0 +1,11 @@
+.breed-list {
+    height: 100%;
+    overflow-y: scroll;
+}
+.column {
+    height: 90%;
+    width: 100%;
+}
+.form-field{
+    width: 100%;
+}

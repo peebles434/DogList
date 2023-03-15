@@ -1,0 +1,13 @@
+.breed-gallery {
+    height: 100%;
+    overflow-y: scroll;
+}
+.column {
+    margin-top: 56.5px;
+    height: 90%;
+    width: 100%;
+}
+.picture {
+    height: 500px;
+    width: 500px;
+}

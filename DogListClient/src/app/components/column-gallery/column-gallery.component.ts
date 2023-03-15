@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-column-gallery',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColumnGalleryComponent implements OnInit {
 
+  @Input() selectedBreed: Array<string> = new Array<string>();
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  
 
 }

@@ -1,1 +1,5 @@
-<h1>hello world</h1>
+<div class="column breed-gallery">
+    <div *ngFor="let image of selectedBreed">
+        <img [src]="image" class="picture"/>
+    </div>
+</div>

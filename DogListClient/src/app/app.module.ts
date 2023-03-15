@@ -20,6 +20,7 @@ import { GlobalHeaderBarComponent } from './components/global-header-bar/global-
 import { ColumnListComponent } from './components/column-list/column-list.component';
 import { ColumnGalleryComponent } from './components/column-gallery/column-gallery.component';
 import { BreedListComponent } from './components/breed-list/breed-list.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
  
 @NgModule({
@@ -45,6 +46,7 @@ import { BreedListComponent } from './components/breed-list/breed-list.component
     FormsModule,
     MatListModule,
     HttpClientModule,
+    ScrollingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
