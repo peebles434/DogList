@@ -10,6 +10,9 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -45,6 +48,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     MatListModule,
     HttpClientModule,
     ScrollingModule,
+    MatMenuModule,
+    MatSlideToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
