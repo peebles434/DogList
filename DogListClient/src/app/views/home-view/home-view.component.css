@@ -1,9 +1,11 @@
-.grid-list {
-    min-height: calc(100vh - 64px);
-    padding-bottom: 0 !important;
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
-
 .card {
-    height: calc(80vh - 64px) !important; 
-    width: 90%
+    height: calc(90vh - 64px) !important; 
+}
+.item {
+    flex: 0 0 49%;
 }
