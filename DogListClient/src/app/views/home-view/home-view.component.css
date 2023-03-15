@@ -1,4 +1,9 @@
+.grid-list {
+    min-height: calc(100vh - 64px);
+    padding-bottom: 0 !important;
+}
+
 .card {
-    height: 90%; 
+    height: calc(80vh - 64px) !important; 
     width: 90%
 }
