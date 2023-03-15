@@ -7,16 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeViewComponent implements OnInit {
 
-  selectedBreed: Array<string> = []
+  selectedBreedPictures: Array<string> = []
+  selectedBreedName: string = ''
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  updateSelectedBreed(urlArray: any){
-    console.log(urlArray)
-    this.selectedBreed = urlArray;
+  updateSelectedBreedPictures(urlArray: any){
+    this.selectedBreedPictures = urlArray;
+  }
+
+  updateSelectedBreedName(name: any){
+    this.selectedBreedName = name;
   }
 
 }

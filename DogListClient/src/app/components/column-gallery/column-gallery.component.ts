@@ -7,7 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ColumnGalleryComponent implements OnInit {
 
-  @Input() selectedBreed: Array<string> = new Array<string>();
+  @Input() selectedBreedPictures: Array<string> = new Array<string>();
+  @Input() selectedBreedName: string = '';
 
   constructor() { }
 
@@ -17,3 +18,4 @@ export class ColumnGalleryComponent implements OnInit {
   
 
 }
+

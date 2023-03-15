@@ -1,12 +1,12 @@
 <mat-grid-list cols="2">
     <mat-grid-tile>
         <mat-card class="card">
-            <app-column-list (selectedBreedEvent)="updateSelectedBreed($event)"></app-column-list>
+            <app-column-list (selectedBreedPictures)="updateSelectedBreedPictures($event)" (selectedBreedName)="updateSelectedBreedName($event)"></app-column-list>
         </mat-card>
     </mat-grid-tile>
     <mat-grid-tile>
         <mat-card class="card"> 
-            <app-column-gallery [selectedBreed]="selectedBreed" ></app-column-gallery>
+            <app-column-gallery [selectedBreedPictures]="selectedBreedPictures" [selectedBreedName]="selectedBreedName"></app-column-gallery>
         </mat-card>
     </mat-grid-tile>
 </mat-grid-list>

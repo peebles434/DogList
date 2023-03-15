@@ -1,18 +1,29 @@
 <div class="column">
     <mat-form-field class="form-field">
-        <mat-label>Search Breed</mat-label>
-        <input matInput type="text" [(ngModel)]="inputValue">
+        <mat-label>Filter Breeds</mat-label>
+        <input #filterInput matInput type="text" [(ngModel)]="inputValue" (input)="filterList(filterInput.value)">
     </mat-form-field>
 
-    <mat-list class="breed-list">
-        <mat-list-item *ngFor='let breed of allBreeds'>
-            <div (click)="this.fetchBreedPictures(breed.title)">
-                <div mat-card-avatar></div>
-                <div matListItemTitle >
-                    <img [src]="breed.thumbnail" style="width:50px; height:50px"/>
-                    {{breed.title}}
+    <mat-selection-list class="breed-list" [multiple]="false">
+        <div *ngIf="inputValue; else showAll">
+            <mat-list-option *ngFor='let breed of filteredBreeds'>
+                <div (click)="this.displayBreedPictures(breed)">
+                    <div matListItemTitle class="listItem">
+                        <img [src]="breed.pictures[0]" style="width:50px; height:50px"/>
+                        <span style="margin: auto 10px">{{breed.title}}</span>
+                    </div>
                 </div>
-            </div>
-        </mat-list-item>
-    </mat-list>
+            </mat-list-option>
+        </div>
+        <ng-template #showAll>
+            <mat-list-option *ngFor='let breed of allBreeds'>
+                <div (click)="this.displayBreedPictures(breed)">
+                    <div matListItemTitle class="listItem">
+                        <img [src]="breed.pictures[0]" style="width:50px; height:50px"/>
+                        <span style="margin: auto 10px">{{breed.title}}</span>
+                    </div>
+                </div>
+            </mat-list-option>
+        </ng-template>
+    </mat-selection-list>
 </div>

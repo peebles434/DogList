@@ -18,8 +18,7 @@ import { AboutViewComponent } from './views/about-view/about-view.component';
 import { PageNotFoundViewComponent } from './views/page-not-found-view/page-not-found-view.component';
 import { GlobalHeaderBarComponent } from './components/global-header-bar/global-header-bar.component';
 import { ColumnListComponent } from './components/column-list/column-list.component';
-import { ColumnGalleryComponent } from './components/column-gallery/column-gallery.component';
-import { BreedListComponent } from './components/breed-list/breed-list.component';
+import { ColumnGalleryComponent } from './components/column-gallery/column-gallery.component'; 
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
  
@@ -32,7 +31,6 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     GlobalHeaderBarComponent,
     ColumnListComponent,
     ColumnGalleryComponent,
-    BreedListComponent,
   ],
   imports: [
     BrowserModule,

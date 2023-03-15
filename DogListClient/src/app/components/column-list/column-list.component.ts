@@ -12,7 +12,10 @@ export class ColumnListComponent implements OnInit {
 
   inputValue = "";
   allBreeds: Array<Breed> = new Array<Breed>();
-  @Output() selectedBreedEvent = new EventEmitter<Array<string>>();
+  filteredBreeds: Array<Breed> = new Array<Breed>();
+  @Output() selectedBreedPictures = new EventEmitter<Array<string>>();
+  @Output() selectedBreedName = new EventEmitter<string>();
+
 
   ngOnInit(): void {
     this.fetchBreeds();
@@ -23,9 +26,11 @@ export class ColumnListComponent implements OnInit {
       let breedNames: any = Object.keys(response.message);
       for (let breedName of breedNames) {
         this.http.get(`https://dog.ceo/api/breed/${breedName}/images`).subscribe((response: any) => {
+          let capitalizedBreedName = this.capitalizeBreed(breedName);
           let breed = {
-            title: breedName,
-            thumbnail: response.message[0]
+            title: capitalizedBreedName,
+            name: breedName,
+            pictures: response.message
           }
           this.allBreeds.push(breed)
         })
@@ -33,14 +38,26 @@ export class ColumnListComponent implements OnInit {
     })
   }
 
-  fetchBreedPictures(breed: any) {
-    this.http.get(`https://dog.ceo/api/breed/${breed}/images`).subscribe((response: any) => {
-      this.selectedBreedEvent.emit(response.message);
-    })
+  capitalizeBreed(breed: any) {
+    return breed.charAt(0).toUpperCase() + breed.slice(1);
+  }
+
+  displayBreedPictures(breed: any) {
+      this.selectedBreedPictures.emit(breed.pictures);
+      this.selectedBreedName.emit(breed.title);
+  }
+
+  filterList(inputValue: any) {
+    if (inputValue) {
+      this.filteredBreeds = this.allBreeds.filter((breed) => {
+        return breed.name.includes(inputValue.toLowerCase());
+      })
+    }
   }
 }
 
 interface Breed {
   title: string;
-  thumbnail: string;
+  name: string;
+  pictures: string;
 }
