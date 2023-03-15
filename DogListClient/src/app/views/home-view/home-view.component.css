@@ -4,7 +4,8 @@
     gap: 20px;
 }
 .card {
-    height: calc(90vh - 64px) !important; 
+    height: calc(92vh - 64px) !important; 
+    margin-top: 10px;
 }
 .item {
     flex: 0 0 49%;
