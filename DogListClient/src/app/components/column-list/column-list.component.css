@@ -9,3 +9,9 @@
 .form-field {
     width: 100%;
 }
+.list-item-content {
+    margin: auto 5px
+}
+.list-item-container {
+    display: flex;
+}

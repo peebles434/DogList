@@ -8,19 +8,19 @@
         <div *ngIf="inputValue; else showAll">
             <mat-list-option *ngFor='let breed of filteredBreeds'>
                 <div (click)="this.displayBreedPictures(breed)">
-                    <div matListItemTitle class="listItem">
-                        <img [src]="breed.pictures[0]" style="width:50px; height:50px"/>
-                        <span style="margin: auto 10px">{{breed.title}}</span>
+                    <div matListItemTitle class="list-item-container">
+                        <img [src]="breed.pictures[0]" style="width:40px; height:40px" class="list-item-content"/>
+                        <span class="list-item-content">{{breed.title}}</span>
                     </div>
                 </div>
             </mat-list-option>
         </div>
         <ng-template #showAll>
             <mat-list-option *ngFor='let breed of allBreeds'>
-                <div (click)="this.displayBreedPictures(breed)">
-                    <div matListItemTitle class="listItem">
-                        <img [src]="breed.pictures[0]" style="width:50px; height:50px"/>
-                        <span style="margin: auto 10px">{{breed.title}}</span>
+                <div (click)="this.displayBreedPictures(breed)" class="list-item">
+                    <div matListItemTitle class="list-item-container">
+                        <img [src]="breed.pictures[0]" style="width:40px; height:40px" class="list-item-content"/>
+                        <span class="list-item-content">{{breed.title}}</span>
                     </div>
                 </div>
             </mat-list-option>
